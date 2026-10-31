@@ -4,4 +4,5 @@ __pycache__/
 *.tfstate
 *.tfstate.*
 .terraform/
-*.tfvars*.log
+*.tfvars
+*.log

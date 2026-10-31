@@ -40,9 +40,9 @@ jobs:
           build-args: APP_VERSION=${{ steps.vars.outputs.tag }}
           tags: ${{ env.IMAGE }}:${{ steps.vars.outputs.tag }}
 
-      - name: Manifest etiketini güncelle
+      - name: Dev etiketini güncelle
         run: |
-          sed -i 's|^  tag: .*|  tag: "${{ steps.vars.outputs.tag }}"|' helm/flask-demo/values.yaml
+          sed -i 's|^  tag: .*|  tag: "${{ steps.vars.outputs.tag }}"|' helm/flask-demo/values-dev.yaml
 
       - name: Git kimliği ayarla
         run: |
@@ -52,9 +52,9 @@ jobs:
       - name: Değişikliği commit et ve push et
         run: |
           if git diff --quiet; then
-            echo "values.yaml değişmedi, commit yok"
+            echo "values-dev.yaml değişmedi, commit yok"
           else
-            git add helm/flask-demo/values.yaml
-            git commit -m "ci: image tag ${{ steps.vars.outputs.tag }}"
+            git add helm/flask-demo/values-dev.yaml
+            git commit -m "ci: dev image tag ${{ steps.vars.outputs.tag }}"
             git push
           fi

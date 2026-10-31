@@ -1,0 +1,5 @@
+image:
+  tag: "36830d4"
+
+service:
+  nodePort: 30080

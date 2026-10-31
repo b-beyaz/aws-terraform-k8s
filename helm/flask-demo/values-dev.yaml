@@ -1,0 +1,10 @@
+replicaCount: 1
+
+image:
+  tag: "36830d4"
+
+service:
+  nodePort: 30081
+
+pdb:
+  enabled: false

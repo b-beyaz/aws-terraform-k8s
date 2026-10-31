@@ -1,7 +1,7 @@
 replicaCount: 1
 
 image:
-  tag: "36830d4"
+  tag: "878eadf"
 
 service:
   nodePort: 30081

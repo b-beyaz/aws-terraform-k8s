@@ -41,7 +41,8 @@ jobs:
           tags: ${{ env.IMAGE }}:${{ steps.vars.outputs.tag }}
 
       - name: Manifest etiketini güncelle
-        run: sed -i "s|image: ghcr.io/.*|image: ${{ env.IMAGE }}:${{ steps.vars.outputs.tag }}|" k8s/deployment.yaml
+        run: |
+          sed -i "s|image: ghcr.io/.*|image: ${{ env.IMAGE }}:${{ steps.vars.outputs.tag }}|" k8s/deployment.yaml
 
       - name: Git kimliği ayarla
         run: |

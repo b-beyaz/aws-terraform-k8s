@@ -42,7 +42,7 @@ jobs:
 
       - name: Manifest etiketini güncelle
         run: |
-          sed -i "s|image: ghcr.io/.*|image: ${{ env.IMAGE }}:${{ steps.vars.outputs.tag }}|" helm/flask-demo/values.yaml
+          sed -i 's|^  tag: .*|  tag: "${{ steps.vars.outputs.tag }}"|' helm/flask-demo/values.yaml
 
       - name: Git kimliği ayarla
         run: |

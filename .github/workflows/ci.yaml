@@ -51,6 +51,6 @@ jobs:
 
       - name: Değişikliği commit et ve push et
         run: |
-          git add k8s/deployment.yaml
+          git add helm/flask-demo/values.yaml
           git commit -m "ci: image tag ${{ steps.vars.outputs.tag }}"
           git push

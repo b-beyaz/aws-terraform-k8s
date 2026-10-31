@@ -8,7 +8,10 @@ spec:
   source:
     repoURL: https://github.com/b-beyaz/aws-terraform-k8s.git
     targetRevision: main
-    path: k8s
+    path: helm/flask-demo
+    helm:
+      valueFiles:
+        - values.yaml
   destination:
     server: https://kubernetes.default.svc
     namespace: default

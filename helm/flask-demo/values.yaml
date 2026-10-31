@@ -2,7 +2,7 @@ replicaCount: 2
 
 image:
   repository: ghcr.io/b-beyaz/k3s-gitops-demo
-  tag: "0fbd0f6"
+  tag: "36830d4"
 
 service:
   type: NodePort

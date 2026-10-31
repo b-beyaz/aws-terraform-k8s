@@ -51,6 +51,10 @@ jobs:
 
       - name: Değişikliği commit et ve push et
         run: |
-          git add helm/flask-demo/values.yaml
-          git commit -m "ci: image tag ${{ steps.vars.outputs.tag }}"
-          git push
+          if git diff --quiet; then
+            echo "values.yaml değişmedi, commit yok"
+          else
+            git add helm/flask-demo/values.yaml
+            git commit -m "ci: image tag ${{ steps.vars.outputs.tag }}"
+            git push
+          fi

@@ -1,5 +1,5 @@
 image:
-  tag: "36830d4"
+  tag: "b27ce50"
 
 service:
   nodePort: 30080
